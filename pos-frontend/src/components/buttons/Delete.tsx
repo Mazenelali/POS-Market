@@ -5,9 +5,9 @@ interface DeleteProps {
     onClick: () => void;
 }
 
-function Delete({ onClick }: DeleteProps) {
+function Delete() {
     return (
-        <Box onClick={onClick} sx={{ color: "gray" }}>
+        <Box  sx={{ color: "gray" }}>
             <DeleteOutline />
         </Box>
     );

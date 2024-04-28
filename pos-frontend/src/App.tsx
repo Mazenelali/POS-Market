@@ -2,22 +2,40 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Layout from "./layout/layout";
 import Dashboard from "./pages/Dashboard";
-import Product from "./pages/Product";
-import Category from "./pages/Category";
-import Batch from "./pages/Batch";
-import TransactionDetails from "./pages/TransactionDetails";
-import Transaction from "./pages/Transaction";
-import User from "./pages/User";
-import Action from "./pages/Action";
+import Product from "./pages/Product/Product";
+import Category from "./pages/Category/Category";
+import Batch from "./pages/Batch/Batch";
+import TransactionDetails from "./pages/TrasactionDetails/TransactionDetails";
+import Transaction from "./pages/Transaction/Transaction";
+import User from "./pages/User/User";
+import Action from "./pages/Action/Action";
+import AddCategory from "./pages/Category/AddCategory";
+import EditCategory from "./pages/Category/EditCategory";
+import CategoryIndex from "./pages/Category/CatedoryIndex";
+import AddProduct from "./pages/Product/AddProduct";
+import EditProduct from "./pages/Product/EditProduct";
+import ProductIndex from "./pages/Product/ProductsIndex";
 
 function App() {
     return (
         <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/admin/" element={<Layout />}>
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="products" element={<Product />} />
-                <Route path="categories" element={<Category />} />
+            <Route path="/" element={<Layout />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="products" element={<ProductIndex />}>
+                    <Route index element={<Product />} />
+                    <Route path="add-products" element={<AddProduct />} />
+                    <Route path="edit-products/:id" element={<EditProduct />} />
+                </Route>
+                <Route path="categories" element={<CategoryIndex />}>
+                    <Route index element={<Category />} />
+                    <Route path="add-categories" element={<AddCategory />} />
+                    <Route
+                        path="edit-categories/:id"
+                        element={<EditCategory />}
+                    />
+                </Route>
+
                 <Route path="batch" element={<Batch />} />
                 <Route
                     path="transaction-details"

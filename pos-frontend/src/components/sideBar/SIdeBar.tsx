@@ -14,7 +14,6 @@ import ListItemText from "@mui/material/ListItemText";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -134,7 +133,6 @@ export default function ResponsiveDrawer(props: Props) {
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
             <AppBar
-                
                 position="fixed"
                 // sx={{
                 //     width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -155,9 +153,6 @@ export default function ResponsiveDrawer(props: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
-                    </Typography>
                 </Toolbar>
             </AppBar>
             <Box

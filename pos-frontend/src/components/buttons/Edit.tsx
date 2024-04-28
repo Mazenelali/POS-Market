@@ -5,9 +5,9 @@ interface EditProps {
     onClick: () => void;
 }
 
-function Edits({ onClick }: EditProps) {
+function Edits() {
     return (
-        <Box onClick={onClick} sx={{ fontSize: "10px", color: "gray" }}>
+        <Box  sx={{ fontSize: "10px", color: "gray" }}>
             <Edit />
         </Box>
     );
