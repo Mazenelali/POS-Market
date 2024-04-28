@@ -84,15 +84,15 @@ export default function ResponsiveDrawer(props: Props) {
             <Divider />
             <List>
                 {links.map((eachLink, index) => (
-                    <ListItem key={eachLink.name} disablePadding>
-                        <ListItemButton>
-                            <Link
-                                to={eachLink.link}
-                                style={{
-                                    display: "flex",
-                                    textDecoration: "none",
-                                }}
-                            >
+                    <Link
+                        to={eachLink.link}
+                        style={{
+                            display: "flex",
+                            textDecoration: "none",
+                        }}
+                    >
+                        <ListItem key={eachLink.name} disablePadding>
+                            <ListItemButton>
                                 <ListItemIcon>
                                     {index % 2 === 0 ? (
                                         <InboxIcon />
@@ -102,11 +102,14 @@ export default function ResponsiveDrawer(props: Props) {
                                 </ListItemIcon>
                                 <ListItemText
                                     primary={eachLink.name}
-                                    style={{ color: "#757575" }}
+                                    style={{
+                                        color: "#757575",
+                                        textAlign: "right",
+                                    }}
                                 />
-                            </Link>
-                        </ListItemButton>
-                    </ListItem>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
             <Divider />
