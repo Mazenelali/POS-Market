@@ -27,14 +27,13 @@ function Category() {
             headerName: "First name",
             width: 150,
             align: "right",
-            editable: true,
         },
         {
             field: "lastName",
             headerName: "Last name",
             width: 150,
             align: "right",
-            editable: true,
+
         },
         {
             field: "age",

@@ -75,7 +75,7 @@ export default function SignUp() {
                             variant="contained"
                             sx={{ mt: 6, mb: 2 }}
                         >
-                            Sign Up
+                            Sign In
                         </Button>
                     </Box>
                 </Box>

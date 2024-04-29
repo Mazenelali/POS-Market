@@ -15,6 +15,9 @@ import CategoryIndex from "./pages/Category/CatedoryIndex";
 import AddProduct from "./pages/Product/AddProduct";
 import EditProduct from "./pages/Product/EditProduct";
 import ProductIndex from "./pages/Product/ProductsIndex";
+import UserIndex from "./pages/User/UserIndex";
+import AddUser from "./pages/User/AddUser";
+import EditUser from "./pages/User/EditUser";
 
 function App() {
     return (
@@ -42,7 +45,11 @@ function App() {
                     element={<TransactionDetails />}
                 />
                 <Route path="transactions" element={<Transaction />} />
-                <Route path="users" element={<User />} />
+                <Route path="users" element={<UserIndex />}>
+                    <Route index element={<User />} />
+                    <Route path="add-users" element={<AddUser />} />
+                    <Route path="edit-users/:id" element={<EditUser />} />
+                </Route>
                 <Route path="actions" element={<Action />} />
             </Route>
         </Routes>

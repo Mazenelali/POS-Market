@@ -217,7 +217,7 @@ function Form({ fields, setAddData }: FieldsProps) {
             >
                 <Button
                     variant="contained"
-                    sx={{ width: "30%", p: 1.5 }}
+                    sx={{ marginTop: "20px", p: 1.5 }}
                 >{`Add category`}</Button>
             </Box>
         </form>
