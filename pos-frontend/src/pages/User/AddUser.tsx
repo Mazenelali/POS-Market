@@ -25,6 +25,7 @@ function AddUser() {
             options: ["SUPERADMIN", "ADMIN", "EMPLOYEE"],
 
             require: false,
+            
         },
         {
             label: "Gender",
