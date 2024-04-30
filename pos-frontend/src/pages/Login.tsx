@@ -9,16 +9,46 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import axios from "axios";
+import useSignIn from "react-auth-kit/hooks/useSignIn";
+import { useNavigate } from "react-router-dom";
+
 
 const defaultTheme = createTheme();
 
 export default function SignUp() {
+    const signIn = useSignIn();
+    const navigate = useNavigate();
+
+
+    const url = process.env.REACT_APP_API_URL;
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        const loginAth = {
             email: data.get("email"),
             password: data.get("password"),
+        };
+        axios.post(url + "/api/users/login", loginAth).then((res) => {
+            const { token, userData } = res.data;
+            if (
+                signIn({
+                    auth: {
+                        token: token,
+                        type: "Bearer",
+                    },
+                    userState: {
+                        email: userData.email,
+                        id: userData.id,
+                        role: userData.role,
+                    },
+                })
+            ) {
+                navigate("/");
+            } else {
+                console.log(" error while sign in ");
+            }
         });
     };
 

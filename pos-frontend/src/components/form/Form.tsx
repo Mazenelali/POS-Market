@@ -33,6 +33,7 @@ const StyledGridContainer = styled(Box)`
 interface FieldsProps {
     fields: Fields[];
     setAddData?: any;
+    textButtonSubmite: string;
 }
 
 interface Fields {
@@ -45,7 +46,7 @@ interface Fields {
     require?: boolean;
 }
 
-function Form({ fields, setAddData }: FieldsProps) {
+function Form({ fields, setAddData, textButtonSubmite }: FieldsProps) {
     function handleChangeData(e: any) {
         const { name, value, files } = e.target;
         if (files) {
@@ -218,7 +219,7 @@ function Form({ fields, setAddData }: FieldsProps) {
                 <Button
                     variant="contained"
                     sx={{ marginTop: "20px", p: 1.5 }}
-                >{`Add category`}</Button>
+                >{textButtonSubmite}</Button>
             </Box>
         </form>
     );

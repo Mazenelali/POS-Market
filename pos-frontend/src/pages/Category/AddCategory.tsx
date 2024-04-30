@@ -53,7 +53,7 @@ function AddCategory() {
     return (
         <>
             {" "}
-            <Form fields={fields} setAddData={setAddData} />
+            <Form fields={fields} setAddData={setAddData}  textButtonSubmite="Add Category"/>
         </>
     );
 }

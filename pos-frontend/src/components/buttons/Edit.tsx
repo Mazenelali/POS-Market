@@ -1,9 +1,9 @@
 import { Edit } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
-interface EditProps {
-    onClick: () => void;
-}
+// interface EditProps {
+//     onClick: () => void;
+// }
 
 function Edits() {
     return (

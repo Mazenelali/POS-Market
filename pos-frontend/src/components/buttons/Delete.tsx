@@ -1,9 +1,9 @@
 import { DeleteOutline } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
-interface DeleteProps {
-    onClick: () => void;
-}
+// interface DeleteProps {
+//     onClick: () => void;
+// }
 
 function Delete() {
     return (
